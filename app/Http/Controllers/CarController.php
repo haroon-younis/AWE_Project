@@ -68,7 +68,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        //$cars = Car::where('owner_id', auth()->id())->get();
+        $this->authorize('update', $car);
         
         return view('cars/show', compact('car'));
     }
@@ -93,8 +93,16 @@ class CarController extends Controller
      */
     public function update(Car $car)
     {
+        $this->authorize('update', $car);
         
-        $car->update(request(['make', 'model','description']));
+        $attributes =  request()->validate([
+            'make' => ['required', 'max:255'],
+            'model' => ['required', 'max:255'],
+            'description' => ['required', 'min:3', 'max:255']
+        ]);
+        
+        //dd($attributes);
+        $car->update($attributes);
         
         return redirect('cars');
     }
@@ -106,6 +114,8 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
+        $this->authorize('update', $car);
+        
         $car->delete();   
         return redirect('cars');
     }

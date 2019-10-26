@@ -8,7 +8,11 @@ use App\Car;
 class PagesController extends Controller
 {
     public function homePage(Car $cars){
-        return view('pages.index', compact('cars'));
+        return view('pages.index',[
+            'cars' => ['BMW',
+                       'Mercedes'
+            ]
+        ]);
     }
     
     public function aboutPage(){

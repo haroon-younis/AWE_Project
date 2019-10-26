@@ -28,6 +28,8 @@
           <div class="form-group">
               <button type="submit" class="btn btn-primary">Edit Car</button>
           </div>
+          
+          @include('errors')
           </form>
           
           <form method="POST" action=/cars/{{ $car->id }}>
