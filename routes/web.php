@@ -21,3 +21,7 @@ Route::post('/completed-todos/{todo}', 'CompletedTodoController@store');
 Route::delete('/completed-todos/{todo}', 'CompletedTodoController@destroy');
 
 Route::resource('/cars', 'CarController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

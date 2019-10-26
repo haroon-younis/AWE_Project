@@ -7,6 +7,10 @@ use App\Car;
 
 class CarController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,9 @@ class CarController extends Controller
      */
     public function index(Car $car)
     {
-        $car = Car::all();
+        //$car = Car::all();
+        
+        $car = Car::where('owner_id', auth()->id())->get();
         
         return view('cars.cars', compact('car'));
     }
@@ -45,10 +51,9 @@ class CarController extends Controller
             'description' => ['required', 'min:3', 'max:255']
         ]);
         
-        //$attributes['owner_id'] = auth()->id();
+        $attributes['owner_id'] = auth()->id();
         
         //return $attributes;
-        
         
         Car::create($attributes);
         
