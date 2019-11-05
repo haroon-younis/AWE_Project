@@ -6,8 +6,8 @@
 
 @section('content')
     <div class="container">
-        <h1>{{$car->make}} {{$car->model}}</h1>
-        <p>{{$car->description}}</p>
+        <h1 class="display-4">{{$car->make}} {{$car->model}}</h1>
+        <p class="lead">{{$car->description}}</p>
         
         <a class="btn btn-warning btn-lg" href="/cars/{{$car->id}}/edit">Edit</a>
     </div>

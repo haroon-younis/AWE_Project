@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Car;
+use App\Mail\CarCreated;
 
 class CarController extends Controller
 {
@@ -55,7 +56,11 @@ class CarController extends Controller
         
         //return $attributes;
         
-        Car::create($attributes);
+        $car = Car::create($attributes);
+        
+        \Mail::to('haroon@gmail.com')->send(
+            new CarCreated($car)
+        );
         
         return redirect ('cars');
     }
@@ -68,7 +73,11 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        $this->authorize('update', $car);
+        if (\Gate::denies('update', $car)){
+            abort(403, "You do not have access to this car");
+        }
+        
+        //$this->authorize('update', $car);
         
         return view('cars/show', compact('car'));
     }
