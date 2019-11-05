@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Car;
-use App\Mail\CarCreated;
+use App\Mail\CarAdded;
 
 class CarController extends Controller
 {
@@ -58,8 +58,8 @@ class CarController extends Controller
         
         $car = Car::create($attributes);
         
-        \Mail::to('haroon@gmail.com')->send(
-            new CarCreated($car)
+        \Mail::to($car->owner->email)->send(
+            new CarAdded($car)
         );
         
         return redirect ('cars');

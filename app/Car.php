@@ -8,6 +8,11 @@ class Car extends Model
 {
     protected $guarded = [];
     
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
+    
     public function todos()
    {
        return $this->hasMany(Todo::class);
