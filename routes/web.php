@@ -16,7 +16,7 @@
 Route::get('/', 'PagesController@homePage');
 Route::get('/about', 'PagesController@aboutPage');
 
-Route::post('/car/{car}/todos', 'CarTodoController@store');
+Route::post('/cars/{car}/todos', 'CarTodoController@store');
 Route::post('/completed-todos/{todo}', 'CompletedTodoController@store');
 Route::delete('/completed-todos/{todo}', 'CompletedTodoController@destroy');
 

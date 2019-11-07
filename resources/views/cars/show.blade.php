@@ -40,7 +40,7 @@
     @endif
     
     <div class="container">
-        <form method="POST" class="box"action="/car/{{$car->id}}/todos">
+        <form method="POST" class="box"action="/cars/{{$car->id}}/todos">
               {{ csrf_field() }}  
               <div class="form-group">
                 <label for="new_task">New Todo</label>
@@ -56,6 +56,6 @@
             </form>
         </div>
     
-    
+        
     
 @endsection
