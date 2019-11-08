@@ -18,3 +18,17 @@
         <p>{{session('deleted')}}</p>
     </div>
 @endif
+
+@if(session('todo')) <!-- Adding a todo alert -->
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Successfully added</h4>
+        <p>{{session('todo')}}</p>
+    </div>
+@endif
+
+@if(session('completed')) <!-- Completing a todo alert -->
+    <div class="alert alert-secondary" role="alert">
+      <h4 class="alert-heading">Completed!</h4>
+        <p>{{session('completed')}}</p>
+    </div>
+@endif

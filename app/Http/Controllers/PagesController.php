@@ -7,7 +7,9 @@ use App\Car;
 
 class PagesController extends Controller
 {
-    public function homePage(Car $cars){
+    public function homePage(Car $cars)
+    {
+        
         return view('pages.index',[
             'cars' => ['BMW',
                        'Mercedes'

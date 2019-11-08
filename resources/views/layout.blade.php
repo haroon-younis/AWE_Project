@@ -31,9 +31,21 @@
                     <li class="nav-item">
                         <a class="nav-link"href="/cars">My Cars</a>
                     </li>
+                    @guest
                     <li class="nav-item">
                         <a class="nav-link"href="/login">Login</a>
-                    </li>
+                    </li>   
+                        @else
+                    <span class="alert alert-success">
+                        <li class="nav-item">
+                            <p>Logged in user: {{ Auth::user()->name }}</p>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"href="/home">Logout</a>
+                        </li>
+                    </span>
+                    @endguest
+                    
                 </ul>
             </div>
         </nav>

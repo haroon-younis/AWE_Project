@@ -26,7 +26,8 @@ class CarTodoController extends Controller
         $user = User::find($carOwner);
         
         $user->notify(new CreatedTodo($car));
-        
+                
+        session()->flash('todo', 'You added a todo with the following descripton: '.request()->description);
         return back();
     }
     

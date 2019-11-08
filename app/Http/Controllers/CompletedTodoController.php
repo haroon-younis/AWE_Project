@@ -12,6 +12,8 @@ class CompletedTodoController extends Controller
     {
         $todo->complete();
         
+        session()->flash('completed', 'You completed a todo with the following descripton: '.$todo->description);
+        
         return back();
     }
     
