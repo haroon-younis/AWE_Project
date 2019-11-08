@@ -63,6 +63,9 @@ class CarController extends Controller
             new CarAdded($car)
         );
         */
+        
+        session()->flash('added', 'You have added a new car!');
+       
         event(new CarAdded($car));
         
         return redirect ('cars');
@@ -116,6 +119,8 @@ class CarController extends Controller
         //dd($attributes);
         $car->update($attributes);
         
+        session()->flash('edited', 'You edited the following car: '.$car->make.' '.$car->model);
+        
         return redirect('cars');
     }
     /**
@@ -129,6 +134,8 @@ class CarController extends Controller
         $this->authorize('update', $car);
         
         $car->delete();   
+        
+        session()->flash('deleted', 'You deleted the following car: '.$car->make.' '.$car->model);
         return redirect('cars');
     }
 }

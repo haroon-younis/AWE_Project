@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Todo extends Model
 {
     protected $guarded = [];
@@ -21,4 +22,6 @@ class Todo extends Model
     public function incomplete(){
         $this->complete(false);
     }
+    
+
 }

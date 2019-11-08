@@ -27,8 +27,6 @@ class CarTodoController extends Controller
         
         $user->notify(new CreatedTodo($car));
         
-        //dd($car);
-        
         return back();
     }
     
