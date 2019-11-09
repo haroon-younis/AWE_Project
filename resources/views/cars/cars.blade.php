@@ -12,7 +12,7 @@
         
         <ul class="list-group">
             @foreach($car as $cars)
-                <a href="/cars/{{$cars->id}}"<li class="list-group-item">{{$cars->make}} {{$cars->model}}<li></a>
+                <a href="/cars/{{$cars->id}}"><li class="list-group-item">{{$cars->make}} {{$cars->model}}</li></a>
             @endforeach
         </ul>
     </div>
