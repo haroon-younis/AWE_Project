@@ -16,11 +16,20 @@
 Route::get('/', 'PagesController@homePage');
 Route::get('/about', 'PagesController@aboutPage');
 
+Route::get('/todos', 'CarTodoController@index');
+
 Route::post('/cars/{car}/todos', 'CarTodoController@store');
 Route::post('/completed-todos/{todo}', 'CompletedTodoController@store');
 Route::delete('/completed-todos/{todo}', 'CompletedTodoController@destroy');
 
 Route::resource('/cars', 'CarController');
+
+//Route::resource('/favourites', 'FavouritesController');
+
+Route::get('/favourites', 'FavouritesController@index');
+Route::get('/favourites/{favourites}', 'FavouritesController@show');
+Route::post('/favourites/{car}', 'FavouritesController@store');
+Route::delete('/favourites/{favourites}', 'FavouritesController@destroy');
 
 Auth::routes();
 

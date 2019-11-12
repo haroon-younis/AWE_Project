@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\FavCollection;
 
-class Todo extends Model
+class Favourites extends Model
 {
     protected $guarded = [];
     
@@ -14,15 +14,13 @@ class Todo extends Model
         return $this->belongsTo(Car::class);
     }
     
-    public function complete($completed = true)
+    public function owner()
     {
-        $this->update(compact('completed'));
+        return $this->belongsTo(User::class);
     }
     
-    public function incomplete(){
-        $this->complete(false);
+    public function newCollection(array $models = Array())
+    {
+        return new FavCollection($models);
     }
-    
-    
-
 }

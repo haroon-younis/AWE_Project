@@ -31,6 +31,9 @@
                     <li class="nav-item">
                         <a class="nav-link"href="/cars">My Cars</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link"href="/favourites">Favourites</a>
+                    </li>
                     @guest
                     <li class="nav-item">
                         <a class="nav-link"href="/login">Login</a>

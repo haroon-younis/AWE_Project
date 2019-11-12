@@ -15,6 +15,21 @@
     </div>
     
     <div class="container">
+        <form method="POST" action=/favourites/{{$car->id}}>
+            {{ csrf_field() }}
+            
+            <div class="form-group">
+                <input name="make" type="hidden" class="form-control" value="{{ $car->make }}" required>
+                <input name="model" type="hidden" class="form-control" value="{{ $car->model }}" required>
+                <input name="description" type="hidden" class="form-control" value="{{ $car->description }}" required>
+              </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-info btn-lg">Add to Fav</button>
+          </div>
+          </form>
+    </div>
+    
+    <div class="container">
         <a class="btn btn-primary btn-lg" href="/cars">Back</a>
     </div>
     
@@ -42,7 +57,7 @@
     @endif
     
     <div class="container">
-        <form method="POST" class="box"action="/cars/{{$car->id}}/todos">
+        <form method="POST" class="box" action="/cars/{{$car->id}}/todos">
               {{ csrf_field() }}  
               <div class="form-group">
                 <label for="new_task">New Todo</label>

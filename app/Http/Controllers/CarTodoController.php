@@ -20,7 +20,7 @@ class CarTodoController extends Controller
         $attributes = request()->validate(['description' =>'required']);
         
         $car->addTodo($attributes);
-        
+                
         $carOwner= $car->owner_id;
         
         $user = User::find($carOwner);
@@ -31,5 +31,13 @@ class CarTodoController extends Controller
         return back();
     }
     
-
+    public function index(Todo $todo){
+        $todos = Todo::all();
+        
+        //hitting the method inside the FavCollection 
+        //$todo = $todos->blah();
+        
+        return view('todo', compact('todo'));
+        
+    }
 }
