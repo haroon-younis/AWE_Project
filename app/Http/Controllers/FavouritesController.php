@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Favourites;
 use App\Car;
 use Illuminate\Http\Request;
+use Session;
 
 class FavouritesController extends Controller
 {
@@ -26,7 +27,7 @@ class FavouritesController extends Controller
         
         $favourites = $favourites->returnUserFav(); // get favourites from custom collection class
         
-        dd($favourites);
+        //dd($favourites);
         return view('fav.fav', compact('favourites'));
     }
 
@@ -60,6 +61,12 @@ class FavouritesController extends Controller
         
         //return $attributes;
         
+        
+        
+        Session::push('car', $attributes);
+        //dd(session()->all());
+
+
         $favourites = Favourites::create($attributes);
         
         return redirect ('favourites');

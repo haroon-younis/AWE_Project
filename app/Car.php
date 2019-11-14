@@ -31,10 +31,6 @@ class Car extends Model
        return $this->hasMany(Todo::class);
    }
    
-   public function favs()
-   {
-       return $this->hasMany(Favourites::class);
-   }
    
    public function addTodo($todo)
    {

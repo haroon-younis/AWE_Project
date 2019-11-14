@@ -11,8 +11,7 @@
         @foreach($favourites as $favourite)
             <a href="/favourites/{{$favourite->id}}"><li class="list-group-item">{{$favourite->make}} {{$favourite->model}}</li></a>
         @endforeach
+        
     </div>
-    
-    
-    
+
 @endsection
