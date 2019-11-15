@@ -31,6 +31,12 @@ Route::get('/favourites/{favourites}', 'FavouritesController@show');
 Route::post('/favourites/{car}', 'FavouritesController@store');
 Route::delete('/favourites/{favourites}', 'FavouritesController@destroy');
 
+Route::get('/tags', 'TagController@index');
+Route::get('/tags/create', 'TagController@create');
+Route::get('/tags/{tags}', 'TagController@show');
+Route::post('/tags', 'TagController@store');
+Route::delete('/tags/{tags}', 'TagController@destroy');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

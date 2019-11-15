@@ -36,4 +36,9 @@ class Car extends Model
    {
        $this->todos()->create($todo);
    }
+   
+   public function tags()
+   {
+       return $this->belongsToMany(Tag::class);
+   }
 }

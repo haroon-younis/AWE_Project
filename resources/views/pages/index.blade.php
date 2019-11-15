@@ -5,7 +5,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                <h1>MAKE FILTER SO CARS CAN BE FILERTED BY TYPE $car->tags</h1>
                 <h1>Welcome</h1>
+                
             </div>
         <div class="col">
             <p>pass data through to views here</p>

@@ -29,7 +29,7 @@ class User extends Authenticatable
     
     public function favourites()
     {
-        return $this->hasMany(Favourites::class);
+        return $this->hasMany(Favourites::class, 'owner_id');
     }
     
 }

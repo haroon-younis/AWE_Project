@@ -21,11 +21,11 @@ class FavouritesController extends Controller
      */
     public function index(Favourites $favourites)
     {
-        $favourites = Favourites::all();
+        //$favourites = Favourites::all();
         
-        //$favourites = Favourites::where('owner_id', auth()->id())->get();
+        $favourites = Favourites::where('owner_id', auth()->id())->get();
         
-        $favourites = $favourites->returnUserFav(); // get favourites from custom collection class
+        $favourites->returnUserFav(); // get favourites from custom collection class
         
         //dd($favourites);
         return view('fav.fav', compact('favourites'));
@@ -60,8 +60,6 @@ class FavouritesController extends Controller
         $attributes['owner_id'] = auth()->id();
         
         //return $attributes;
-        
-        
         
         Session::push('car', $attributes);
         //dd(session()->all());

@@ -9,9 +9,9 @@ class Favourites extends Model
 {
     protected $guarded = [];
     
-    public function cars()
+    public function newCollection(array $models = [])
     {
-        return $this->belongsTo(Car::class);
+        return new FavCollection($models);
     }
     
     public function owner()
@@ -19,8 +19,10 @@ class Favourites extends Model
         return $this->belongsTo(User::class);
     }
     
-    public function newCollection(array $models = Array())
+    public function cars()
     {
-        return new FavCollection($models);
+        return $this->hasMany(Car::class);
     }
+
+    
 }

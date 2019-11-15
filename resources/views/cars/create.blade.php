@@ -26,6 +26,15 @@
             <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="Vehicle description" required></textarea>
           </div>
           <div class="form-group">
+            <label for="tags">Tags</label>
+              <select name="tag" class="form-control">
+                @foreach($tags as $tag)
+                    <option>{{$tag->name}}</option>
+                @endforeach
+            </select>
+            </div>
+          </div>
+          <div class="form-group">
               <button type="submit" class="btn btn-primary">Add Car</button>
           </div>
           

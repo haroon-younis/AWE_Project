@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Car;
+use App\Tag;
 //use App\Mail\CarAdded;
 use App\Events\CarAdded;
 
@@ -58,6 +59,7 @@ class CarController extends Controller
         //return $attributes;
         
         $car = Car::create($attributes);
+        
         /*
         \Mail::to($car->owner->email)->send(
             new CarAdded($car)

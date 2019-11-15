@@ -34,6 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link"href="/favourites">Favourites</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link"href="/tags">Tags</a>
+                    </li>
                     @guest
                     <li class="nav-item">
                         <a class="nav-link"href="/login">Login</a>
