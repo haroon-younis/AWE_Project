@@ -9,6 +9,10 @@
         <h1 class="display-4">{{$car->make}} {{$car->model}}</h1>
         <p class="lead">{{$car->description}}</p>
         
+        @foreach($tag as $tags)
+            The tag related to this car is: {{$tag[0]}}<br>
+        @endforeach
+        
         @include('session')
         
         <a class="btn btn-warning btn-lg" href="/cars/{{$car->id}}/edit">Edit</a>

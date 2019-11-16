@@ -7,6 +7,8 @@ use App\Car;
 use App\Tag;
 //use App\Mail\CarAdded;
 use App\Events\CarAdded;
+use Illuminate\Support\Facades\DB;
+
 
 class CarController extends Controller
 {
@@ -35,7 +37,8 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view('cars.create');
+        $tags = Tag::all();
+        return view('cars.create', compact('tags'));
     }
     /**
      * Store a newly created resource in storage.
@@ -56,9 +59,14 @@ class CarController extends Controller
         
         $attributes['owner_id'] = auth()->id();
         
+        $tag = request()->get('tag');
+        
+        
         //return $attributes;
         
         $car = Car::create($attributes);
+        
+        $car->tags()->attach($tag);
         
         /*
         \Mail::to($car->owner->email)->send(
@@ -85,9 +93,13 @@ class CarController extends Controller
             abort(403, "You do not have access to this car");
         }
         
+        $tag = $car->tags->pluck('name');
+        
+        //dd($tag);
+        
         //$this->authorize('update', $car);
         
-        return view('cars/show', compact('car'));
+        return view('cars/show', compact('car', 'tag'));
     }
 
     /**
@@ -140,4 +152,5 @@ class CarController extends Controller
         session()->flash('deleted', 'You deleted the following car: '.$car->make.' '.$car->model);
         return redirect('cars');
     }
+    
 }

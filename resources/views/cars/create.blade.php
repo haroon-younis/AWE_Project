@@ -28,9 +28,10 @@
           <div class="form-group">
             <label for="tags">Tags</label>
               <select name="tag" class="form-control">
-                @foreach($tags as $tag)
-                    <option>{{$tag->name}}</option>
-                @endforeach
+                <option></option>
+                    @foreach($tags as $tag)
+                        <option>{{$tag->id}}</option>
+                    @endforeach
             </select>
             </div>
           </div>
