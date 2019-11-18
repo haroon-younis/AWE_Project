@@ -17,6 +17,8 @@ class CreateChangesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('car_id');
+            $table->text('before');
+            $table->text('after');
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

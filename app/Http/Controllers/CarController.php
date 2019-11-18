@@ -132,9 +132,10 @@ class CarController extends Controller
         ]);
         
         //dd($attributes);
-        $car->update($attributes);
         
-        $car->changes()->attach(auth()->id());
+        
+        
+        $car->update($attributes);
         
         session()->flash('edited', 'You edited the following car: '.$car->make.' '.$car->model);
         
