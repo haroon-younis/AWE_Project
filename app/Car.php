@@ -41,4 +41,11 @@ class Car extends Model
    {
        return $this->belongsToMany(Tag::class)->withTimestamps();
    }
+   
+   public function changes()
+   {
+       return $this->belongsToMany(User::class, 'changes')
+                ->withTimestamps()
+                ->latest('pivot_updated_at');
+   }
 }

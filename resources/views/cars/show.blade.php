@@ -35,6 +35,15 @@
     
     <div class="container">
         <a class="btn btn-primary btn-lg" href="/cars">Back</a>
+        <hr>
+    </div>
+    
+    <div class="container">
+        <h4><u>Change log</u></h4>
+            @foreach($car->changes as $user)
+                <p><strong>{{$user->name}}</strong> edited this {{$user->pivot->updated_at->diffForHumans()}}</p>
+            @endforeach
+        <hr>
     </div>
     
     @if($car->todos->count())
