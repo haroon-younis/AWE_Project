@@ -34,7 +34,7 @@ class TagController extends Controller
     {
         $car = $tag->cars;
         
-        return view('cars.cars', compact('car'));
+        return view('cars.car_tag', compact('car'));
         //dd('hit');
     }
 

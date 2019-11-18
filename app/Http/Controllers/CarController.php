@@ -27,7 +27,9 @@ class CarController extends Controller
         
         $car = Car::where('owner_id', auth()->id())->get();
         
-        return view('cars.cars', compact('car'));
+        $tags = Tag::all();
+        
+        return view('cars.cars', compact('car', 'tags'));
     }
 
     /**
@@ -60,7 +62,6 @@ class CarController extends Controller
         $attributes['owner_id'] = auth()->id();
         
         $tag = request()->get('tag');
-        
         
         //return $attributes;
         
