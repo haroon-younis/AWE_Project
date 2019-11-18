@@ -29,6 +29,14 @@ class TagController extends Controller
     {
         return view('tag.create_tag');
     }
+    
+    public function indexByTags(Tag $tag)
+    {
+        $car = $tag->cars;
+        
+        return view('cars.cars', compact('car'));
+        //dd('hit');
+    }
 
     /**
      * Store a newly created resource in storage.

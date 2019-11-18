@@ -36,6 +36,7 @@ Route::get('/tags/create', 'TagController@create');
 Route::get('/tags/{tags}', 'TagController@show');
 Route::post('/tags', 'TagController@store');
 Route::delete('/tags/{tags}', 'TagController@destroy');
+Route::get('/cars/tags/{tag}', 'TagController@indexByTags');
 
 Auth::routes();
 

@@ -26,23 +26,26 @@
             <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="Vehicle description" required></textarea>
           </div>
           <div class="form-group">
-            <label for="tags">Tags</label>
+            <label for="tag">Tag</label>
               <select name="tag" class="form-control">
                 <option></option>
                     @foreach($tags as $tag)
                         <option>{{$tag->id}}</option>
                     @endforeach
-            </select>
-            </div>
+                </select>
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Add Car</button>
+              </div>
           </div>
-          <div class="form-group">
-              <button type="submit" class="btn btn-primary">Add Car</button>
-          </div>
-          
           @include('errors')
-          
         </form>
-
+        
+        <div class="container">
+            @foreach($tags as $tag)
+                <h6>Tag: {{$tag->id}} = {{$tag->name}}</h6>
+            @endforeach
+        </div>
         
     </div>
     
