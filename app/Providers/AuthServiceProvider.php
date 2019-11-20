@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace AWE\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate;
 //use Illuminate\Support\Facades\Gate;
@@ -14,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Car' => 'App\Policies\CarPolicy',
+        'AWE\Car' => 'AWE\Policies\CarPolicy',
     ];
 
     /**

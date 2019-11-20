@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AWE\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Car;
+use AWE\Car;
 
 class PagesController extends Controller
 {

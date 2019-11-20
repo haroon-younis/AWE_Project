@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AWE\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tag;
+use AWE\Tag;
 
 class TagController extends Controller
 {

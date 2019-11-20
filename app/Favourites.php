@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace AWE;
 
 use Illuminate\Database\Eloquent\Model;
-use App\FavCollection;
+use AWE\FavCollection;
 
 class Favourites extends Model
 {

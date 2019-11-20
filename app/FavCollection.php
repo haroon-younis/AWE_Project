@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace AWE;
 
 use Illuminate\Database\Eloquent\Collection;
-use App\Favourites;
+use AWE\Favourites;
 
 
 class FavCollection extends Collection

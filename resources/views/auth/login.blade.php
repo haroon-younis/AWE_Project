@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Login Page
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -58,7 +62,7 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
-                                <a class="btn btn-link" href="{{ route('login.github') }}">
+                                <a class="btn btn-primary" href="{{ route('login.github') }}">
                                     Login With Github
                                 </a>
                             </div>

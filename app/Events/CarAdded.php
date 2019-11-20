@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace AWE\Events;
 
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;

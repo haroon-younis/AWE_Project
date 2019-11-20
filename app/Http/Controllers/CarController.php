@@ -1,14 +1,14 @@
 <?php
-namespace App\Http\Controllers;
+namespace AWE\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Car;
-use App\Tag;
+use AWE\Car;
+use AWE\Tag;
 
-use App\User;
+use AWE\User;
 use Illuminate\Support\Facades\Auth;
 
-//use App\Mail\CarAdded;
-use App\Events\CarAdded;
+//use AWE\Mail\CarAdded;
+use AWE\Events\CarAdded;
 use Illuminate\Support\Facades\DB;
 class CarController extends Controller
 {
