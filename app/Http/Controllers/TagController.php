@@ -32,7 +32,9 @@ class TagController extends Controller
     
     public function indexByTags(Tag $tag)
     {
-        $car = $tag->cars;
+        //$car = $tag->cars;
+        
+        $car = $tag->cars()->where('owner_id', auth()->id())->get();
         
         return view('cars.car_tag', compact('car'));
         //dd('hit');

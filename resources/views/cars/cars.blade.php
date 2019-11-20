@@ -29,7 +29,6 @@
             <ul class="list-group">
                 <a href="/cars/tags/{{$tag->name}}"><li class="list-group-item">{{$tag->name}}</li></a>
             </ul>
-                
             @endforeach
     </div>
     

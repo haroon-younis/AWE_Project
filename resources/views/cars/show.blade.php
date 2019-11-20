@@ -40,8 +40,9 @@
     
     <div class="container">
         <h4><u>Change log</u></h4>
-            @foreach($car->changes as $user)
-                <p><strong>{{$user->name}}</strong> edited this {{$user->pivot->updated_at->diffForHumans()}}</p>
+            @foreach($car->changes as $change)
+                <p><strong>{{$change->name}}</strong> edited this {{$change->pivot->updated_at->diffForHumans()}}</p>
+                
             @endforeach
         <hr>
     </div>

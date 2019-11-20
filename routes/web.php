@@ -38,6 +38,11 @@ Route::post('/tags', 'TagController@store');
 Route::delete('/tags/{tags}', 'TagController@destroy');
 Route::get('/cars/tags/{tag}', 'TagController@indexByTags');
 
+Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('login.github');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

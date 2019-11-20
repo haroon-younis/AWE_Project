@@ -1,15 +1,15 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Car;
 use App\Tag;
+
+use App\User;
+use Illuminate\Support\Facades\Auth;
+
 //use App\Mail\CarAdded;
 use App\Events\CarAdded;
 use Illuminate\Support\Facades\DB;
-
-
 class CarController extends Controller
 {
     public function __construct() {
@@ -31,7 +31,6 @@ class CarController extends Controller
         
         return view('cars.cars', compact('car', 'tags'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -81,7 +80,6 @@ class CarController extends Controller
         
         return redirect ('cars');
     }
-
     /**
      * Display the specified resource.
      *
@@ -102,7 +100,6 @@ class CarController extends Controller
         
         return view('cars/show', compact('car', 'tag'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -113,7 +110,6 @@ class CarController extends Controller
     {
         return view('cars.edit', compact('car'));
     }
-
     /**
      * Update the specified resource in storage.
      *
