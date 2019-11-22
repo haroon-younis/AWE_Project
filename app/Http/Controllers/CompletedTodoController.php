@@ -1,10 +1,10 @@
 <?php
 
-namespace AWE\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use AWE\Todo;
+use App\Todo;
 
 class CompletedTodoController extends Controller
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace AWE\Http\Controllers;
+namespace App\Http\Controllers;
 
-use AWE\Favourites;
-use AWE\Car;
+use App\Favourites;
+use App\Car;
 use Illuminate\Http\Request;
 use Session;
 
@@ -73,7 +73,7 @@ class FavouritesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \AWE\Favourites  $favourites
+     * @param  \App\Favourites  $favourites
      * @return \Illuminate\Http\Response
      */
     public function show(Favourites $favourites)
@@ -84,7 +84,7 @@ class FavouritesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \AWE\Favourites  $favourites
+     * @param  \App\Favourites  $favourites
      * @return \Illuminate\Http\Response
      */
     public function edit(Favourites $favourites)
@@ -96,7 +96,7 @@ class FavouritesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \AWE\Favourites  $favourites
+     * @param  \App\Favourites  $favourites
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Favourites $favourites)
@@ -107,7 +107,7 @@ class FavouritesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \AWE\Favourites  $favourites
+     * @param  \App\Favourites  $favourites
      * @return \Illuminate\Http\Response
      */
     public function destroy(Favourites $favourites)

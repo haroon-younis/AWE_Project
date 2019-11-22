@@ -1,11 +1,11 @@
 <?php
 
-namespace AWE\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use AWE\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-use AWE\User;
+use App\User;
 
 use Auth;
 use Socialite;

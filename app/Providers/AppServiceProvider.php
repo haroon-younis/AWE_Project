@@ -1,6 +1,6 @@
 <?php
 
-namespace AWE\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

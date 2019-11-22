@@ -1,9 +1,9 @@
 <?php
 
-namespace AWE;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use AWE\FavCollection;
+use App\FavCollection;
 
 class Todo extends Model
 {

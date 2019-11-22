@@ -1,8 +1,8 @@
 <?php
 
-namespace AWE;
+namespace App;
 
-use AWE\Mail\CarAdded;
+use App\Mail\CarAdded;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\Model;
 

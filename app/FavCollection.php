@@ -1,10 +1,9 @@
 <?php
 
-namespace AWE;
+namespace App;
 
 use Illuminate\Database\Eloquent\Collection;
-use AWE\Favourites;
-
+use App\Favourites;
 
 class FavCollection extends Collection
 {
@@ -18,7 +17,6 @@ class FavCollection extends Collection
            //dd($favourites);
             return $favourites;
         });
-        
     }
     
     public function everything()

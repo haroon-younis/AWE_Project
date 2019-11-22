@@ -1,9 +1,9 @@
 <?php
 
-namespace AWE\Providers;
+namespace App\Providers;
 
-use AWE\Events\CarAdded;
-use AWE\Listeners\SendCarAddedNotification;
+use App\Events\CarAdded;
+use App\Listeners\SendCarAddedNotification;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -15,8 +15,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'AWE\Events\Event' => [
-            'AWE\Listeners\EventListener',
+        'App\Events\Event' => [
+            'App\Listeners\EventListener',
         ],
         
         CarAdded::class => [

@@ -1,6 +1,6 @@
 <?php
 
-namespace AWE;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 

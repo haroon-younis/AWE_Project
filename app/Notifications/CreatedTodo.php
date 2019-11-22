@@ -1,8 +1,8 @@
 <?php
 
-namespace AWE\Notifications;
+namespace App\Notifications;
 
-use AWE\Mail\TodoAdded;
+use App\Mail\TodoAdded;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;

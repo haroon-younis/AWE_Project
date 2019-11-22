@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        AWE\Providers\AppServiceProvider::class,
-        AWE\Providers\AuthServiceProvider::class,
-        // AWE\Providers\BroadcastServiceProvider::class,
-        AWE\Providers\EventServiceProvider::class,
-        AWE\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

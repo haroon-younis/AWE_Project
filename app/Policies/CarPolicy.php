@@ -1,9 +1,9 @@
 <?php
 
-namespace AWE\Policies;
+namespace App\Policies;
 
-use AWE\User;
-use AWE\Car;
+use App\User;
+use App\Car;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CarPolicy

@@ -1,16 +1,16 @@
 <?php
 
-namespace AWE\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use Notification;
 
-use AWE\Notifications\CreatedTodo;
-use AWE\Todo;
-use AWE\Car;
-use AWE\User;
+use App\Notifications\CreatedTodo;
+use App\Todo;
+use App\Car;
+use App\User;
 
 class CarTodoController extends Controller
 {

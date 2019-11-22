@@ -1,14 +1,14 @@
 <?php
-namespace AWE\Http\Controllers;
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use AWE\Car;
-use AWE\Tag;
+use App\Car;
+use App\Tag;
 
-use AWE\User;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
-//use AWE\Mail\CarAdded;
-use AWE\Events\CarAdded;
+//use App\Mail\CarAdded;
+use App\Events\CarAdded;
 use Illuminate\Support\Facades\DB;
 class CarController extends Controller
 {
@@ -76,7 +76,7 @@ class CarController extends Controller
         
         session()->flash('added', 'You have added a new car!');
        
-        event(new CarAdded($car));
+        event(new CarAdded($car)); // fires an event which sends an email to user 
         
         return redirect ('cars');
     }
