@@ -3,9 +3,11 @@
 
 You have added a new car to the 'My cars' section of the website, this is the descripton of your car: <br>
 
-@component('mail::button', ['url' => url('/cars/')])
+@component('mail::button', ['url' => $url])
 View Your Todo for your car
 @endcomponent
+
+
 
 Thanks,<br>
 {{ config('app.name') }}

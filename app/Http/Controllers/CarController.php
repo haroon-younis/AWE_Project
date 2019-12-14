@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Car;
 use App\Tag;
@@ -7,13 +8,14 @@ use App\Tag;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 
-//use App\Mail\CarAdded;
+use App\Mail\CarAdded as CarAddedMail;
 use App\Events\CarAdded;
 use Illuminate\Support\Facades\DB;
+
 class CarController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth');
+        $this->middleware('auth'); // only a logged in user can access the car pages
     }
     
     /**
@@ -153,4 +155,9 @@ class CarController extends Controller
         return redirect('cars');
     }
     
+    public function mail(Car $car)
+    {
+        return new CarAddedMail($car);
+    }
 }
+

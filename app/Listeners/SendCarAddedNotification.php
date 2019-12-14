@@ -5,6 +5,7 @@ namespace App\Listeners;
 use App\Events\CarAdded;
 use App\Mail\CarAdded as CarAddedMail;
 use Illuminate\Support\Facades\Mail;
+
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 

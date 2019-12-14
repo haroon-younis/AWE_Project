@@ -6,8 +6,12 @@ use App\Mail\CarAdded;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Notifications\Notifiable;
+
 class Car extends Model
 {
+    use Notifiable;
+    
     protected $guarded = [];
     
     public static function boot()

@@ -30,7 +30,7 @@
               <select name="tag" class="form-control">
                 <option></option>
                     @foreach($tags as $tag)
-                        <option>{{$tag->id}}</option>
+                        <option value={{$tag->id}}>{{$tag->name}}</option>
                     @endforeach
                 </select>
               </div>
@@ -40,13 +40,6 @@
           </div>
           @include('errors')
         </form>
-        
-        <div class="container">
-            @foreach($tags as $tag)
-                <h6>Tag: {{$tag->id}} = {{$tag->name}}</h6>
-            @endforeach
-        </div>
-        
     </div>
     
     

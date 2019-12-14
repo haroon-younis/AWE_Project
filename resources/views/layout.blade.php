@@ -23,23 +23,23 @@
                     <a class="navbar-brand" href="/">AWE Project</a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href={{ route('index') }}>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"href="/about">About</a>
+                        <a class="nav-link"href={{ route('about.index') }}>About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"href="/cars">My Cars</a>
+                        <a class="nav-link"href={{ route('cars.index') }}>My Cars</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"href="/favourites">Favourites</a>
+                        <a class="nav-link"href={{ route('fav.index') }}>Favourites</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"href="/tags">Tags</a>
+                        <a class="nav-link"href={{ route('tags.index') }}>Tags</a>
                     </li>
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link"href="/login">Login</a>
+                        <a class="nav-link"href={{ route('login') }}>Login</a>
                     </li>   
                         @else
                     <span class="alert alert-success">
@@ -47,7 +47,14 @@
                             <p>Logged in user: {{ Auth::user()->name }}</p>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"href="/home">Logout</a>
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                            </form>
                         </li>
                     </span>
                     @endguest
@@ -59,6 +66,6 @@
     
 		@yield('content')
 		
-		
+		<script src="{{ asset('js/app.js') }}"></script>
 	</body>
 </html>

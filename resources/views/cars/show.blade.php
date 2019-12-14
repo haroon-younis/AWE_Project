@@ -9,14 +9,19 @@
         <h1 class="display-4">{{$car->make}} {{$car->model}}</h1>
         <p class="lead">{{$car->description}}</p>
         
+        <hr>
+        
         @foreach($tag as $tags)
-            The tag related to this car is: {{$tag[0]}}<br>
+            <p class="subtitle mb-0">The tag related to this car is: {{$tag[0]}}</p><br>
         @endforeach
         
         @include('session')
         
+        <hr>
+        
         <a class="btn btn-warning btn-lg" href="/cars/{{$car->id}}/edit">Edit</a>
     </div>
+    
     
     <div class="container">
         <form method="POST" action=/favourites/{{$car->id}}>
@@ -34,6 +39,10 @@
     </div>
     
     <div class="container">
+        <a class="btn btn-dark btn-lg mb-3" href="/cars/{{$car->id}}/mail">View Mail</a>
+    </div>
+    
+    <div class="container">
         <a class="btn btn-primary btn-lg" href="/cars">Back</a>
         <hr>
     </div>
@@ -42,7 +51,6 @@
         <h4><u>Change log</u></h4>
             @foreach($car->changes as $change)
                 <p><strong>{{$change->name}}</strong> edited this {{$change->pivot->updated_at->diffForHumans()}}</p>
-                
             @endforeach
         <hr>
     </div>
@@ -61,7 +69,7 @@
                         <div class="form-check">
                             <input name="completed" type="checkbox" class="form-check-input" id="exampleCheck1" onChange="this.form.submit()" {{$todo->completed ? 'checked' : ''}}>
                             <label for="completed" class="form-check-label {{ $todo->completed ? 'is-complete' : ''}}" for="exampleCheck1" >
-                                {{$todo->description}}
+                                <p class="subtitle">{{$todo->description}}</p>
                             </label>
                          </div>
                     </form>
@@ -86,7 +94,5 @@
               
             </form>
         </div>
-    
-        
     
 @endsection

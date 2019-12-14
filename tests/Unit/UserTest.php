@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserTest extends TestCase
 {
-    /** @test */
+    ///** @test */
     public function user_can_have_todo_items_on_cars()
     {
         $car = factory('App\Car')->create();
@@ -20,7 +20,8 @@ class UserTest extends TestCase
         
     }
     
-    /** @test */
+   
+    ///** @test */
     public function a_user_can_browse_cars()
     {
         $car = factory('App\Car')->create();
@@ -30,4 +31,5 @@ class UserTest extends TestCase
         $response->assertSee($car->make);
 
     }
+    
 }

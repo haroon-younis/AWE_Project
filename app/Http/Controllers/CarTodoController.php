@@ -32,12 +32,19 @@ class CarTodoController extends Controller
     }
     
     public function index(Todo $todo){
-        $todos = Todo::all();
+        //$todos = Todo::all();
+        $user = User::find(1);
+
+        //dd($user->notifications);
+        foreach ($user->notifications as $notification) {
+            dd($notification->data);
+        }
         
         //hitting the method inside the FavCollection 
         //$todo = $todos->blah();
         
-        return view('todo', compact('todo'));
+        return view('cars.todo', compact('todo'));
         
     }
+    
 }

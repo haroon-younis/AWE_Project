@@ -44,7 +44,9 @@ class CreatedTodo extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)->markdown('mail.todo-added');
+         $url = url('/cars/'.$this->car->id);
+        
+        return (new MailMessage)->markdown('mail.todo-added', ['url' => $url]);
     }
 
     /**
@@ -53,10 +55,13 @@ class CreatedTodo extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
-    public function toArray($notifiable)
+    public function toDatabase($notifiable)
     {
         return [
-            //
+            'make' => $this->car->make,
+            'model' => $this->car->model,
+            'description' => $this->car->description,
+            'todo' => $this->car->todos,
         ];
     }
 }
