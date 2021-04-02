@@ -15,8 +15,7 @@ class TagController extends Controller
     public function index()
     {
         $tags = Tag::all();
-        
-        //dd($tags);
+
         return view('tag.tag', compact('tags'));
     }
 
@@ -29,15 +28,12 @@ class TagController extends Controller
     {
         return view('tag.create_tag');
     }
-    
+
     public function indexByTags(Tag $tag)
     {
-        //$car = $tag->cars;
-        
         $car = $tag->cars()->where('owner_id', auth()->id())->get();
-        
+
         return view('cars.car_tag', compact('car'));
-        //dd('hit');
     }
 
     /**
@@ -48,18 +44,16 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //return request()->all();
-        
         $attributes =  request()->validate([
             'name' => ['required', 'max:255']
         ]);
-        
+
         Tag::create($attributes);
-        
+
         return redirect ('tags');
-        
+
         return $attributes;
-        
+
     }
 
     /**

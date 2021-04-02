@@ -22,8 +22,6 @@ Route::delete('/completed-todos/{todo}', 'CompletedTodoController@destroy');
 
 Route::resource('/cars', 'CarController');
 
-//Route::resource('/favourites', 'FavouritesController');
-
 Route::get('/favourites', 'FavouritesController@index')->name('fav.index');
 Route::get('/favourites/{favourites}', 'FavouritesController@show');
 Route::post('/favourites/{car}', 'FavouritesController@store');
@@ -53,4 +51,3 @@ Route::fallback(function () {
         'message' => 'You have entered an invalid url'
     ]);
 });
-

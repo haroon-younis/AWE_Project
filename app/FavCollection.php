@@ -11,14 +11,13 @@ class FavCollection extends Collection
     {
         // returns collection of favourites that is linked to the user
        return $this->filter(function ($favourites) {
-           //$favourites = Favourites::all();
-           
+
            $favourites = Favourites::where('owner_id', auth()->id())->get();
-           //dd($favourites);
+
             return $favourites;
         });
     }
-    
+
     public function everything()
    {
        return Favourites::all();

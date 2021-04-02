@@ -9,11 +9,11 @@ use Session;
 
 class FavouritesController extends Controller
 {
-    public function __construct() 
+    public function __construct()
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -22,12 +22,11 @@ class FavouritesController extends Controller
     public function index(Favourites $favourites)
     {
         //$favourites = Favourites::all();
-        
+
         $favourites = Favourites::where('owner_id', auth()->id())->get();
-        
+
         $favourites->returnUserFav(); // get favourites from custom collection class
-        
-        //dd($favourites);
+
         return view('fav.fav', compact('favourites'));
     }
 
@@ -50,23 +49,23 @@ class FavouritesController extends Controller
     public function store(Request $request)
     {
         //return request()->all();
-        
+
         $attributes =  request()->validate([
             'make' => ['required', 'max:255'],
             'model' => ['required', 'max:255'],
             'description' => ['required', 'min:3', 'max:255']
         ]);
-        
+
         $attributes['owner_id'] = auth()->id();
-        
+
         //return $attributes;
-        
+
         Session::push('car', $attributes);
         //dd(session()->all());
 
 
         $favourites = Favourites::create($attributes);
-        
+
         return redirect ('favourites');
     }
 
@@ -112,12 +111,8 @@ class FavouritesController extends Controller
      */
     public function destroy(Favourites $favourites)
     {
-        //$this->authorize('update', $favourites);
-        
-        
-        
-        $favourites->delete();   
-        
+        $favourites->delete();
+
         return redirect('favourites');
     }
 }
